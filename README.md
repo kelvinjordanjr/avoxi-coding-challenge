@@ -1,6 +1,8 @@
 # avoxi-coding-challenge
 The chromedriver requires an updated version of Chrome that is 72 or greater.
+
 Update permissions for chromedriver
+
 chmod 755 chromedriver
 
 
