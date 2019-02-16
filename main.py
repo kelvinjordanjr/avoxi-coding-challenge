@@ -11,6 +11,7 @@ app.config["SECRET_KEY"] = "d4e71ce128cf06fdd41a908fdf5cc2e2"
 @app.route("/", methods=["GET", "POST"])
 @app.route("/home", methods=["GET", "POST"])
 def home():
+    dropdown_list = []
     try:
         countryField = pd.read_csv("AVOXI Coding Challenge - Automation - ITFS Packages.csv")
         process = Process(countryField)
