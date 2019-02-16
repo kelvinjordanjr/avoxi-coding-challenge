@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Compare Prices</h1>
+        <hr class="my-4">
+        <div style="display:none" class="justify-content-center showSpinnerDiv">
+            <h3>Please wait...</h3>
+            <div class="spinner-border" role="status"></div>
+        </div>
+        <div id="countryForm" class="text-center">
+            <form method="POST" action="" id="form">
+                <select id="country" name="country" class="input-group-addon form-control" required>
+                    <option disabled selected value="">select a country</option>
+                    {% for each in dropdown_list %}
+                        <option value="{{ each }}">{{ each }}</option>
+                    {% endfor %}
+                </select>
+            </form> 
+            <p>
+                <button type="button" class="btn btn-lg btn-success mt-3" onclick="showSpinnerDiv()">Check</button>
+            </p>
+        </div>
+    </div>
+    <hr/>
+    <div class="jumbotron text-center">
+        <table class="table table-striped table-dark">
+            {% if data %}
+                {% if valType == "list" %}
+                    {% for d in data %}
+                        <tr>
+                            <td>
+                                {{ d }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td>
+                            {{ data }}
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+        </table>
+    </div>
+{% endblock %}
