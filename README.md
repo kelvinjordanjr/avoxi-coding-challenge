@@ -10,3 +10,8 @@ Activate your virtualenv with python 3
 
 
 run pip install -r requirements.txt
+
+
+run the main.py file
+
+python main.py
